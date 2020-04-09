@@ -25,17 +25,27 @@ package com.maomao.leetcode.solution.solution;
 public class LengthOfLastWord {
 
     public int lengthOfLastWord(String s) {
-        int result = 0;
-        int end = s.length() - 1;
-        while (end >= 0) {
-            if (s.charAt(end--) != ' ') {
-                result++;
-            } else {
-                if (result > 0) {
-                    return result;
-                }
-            }
-        }
-        return result;
+        //解法二
+        String[] result = s.split(" ");
+        return result.length == 0 ? 0 : result[result.length - 1].length();
+
+        //解法一
+//        int result = 0;
+//        int end = s.length() - 1;
+//        while (end >= 0) {
+//            if (s.charAt(end--) != ' ') {
+//                result++;
+//            } else {
+//                if (result > 0) {
+//                    return result;
+//                }
+//            }
+//        }
+//        return result;
+    }
+
+    public static void main(String[] args) {
+        LengthOfLastWord l = new LengthOfLastWord();
+        System.out.println(l.lengthOfLastWord("hello world"));
     }
 }
