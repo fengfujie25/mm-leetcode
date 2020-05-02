@@ -1,4 +1,4 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
 /**
  * 实现 strStr() 函数。

@@ -1,4 +1,4 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
 import com.maomao.leetcode.solution.algorithm.Solution;
 

@@ -1,4 +1,4 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
 /**
  * 最后一个单词的长度

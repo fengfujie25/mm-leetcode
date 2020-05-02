@@ -1,4 +1,4 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
 import java.util.ArrayList;
 import java.util.List;

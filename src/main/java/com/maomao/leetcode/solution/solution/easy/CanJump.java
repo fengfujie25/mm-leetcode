@@ -1,4 +1,4 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
 /**
  * 跳跃游戏

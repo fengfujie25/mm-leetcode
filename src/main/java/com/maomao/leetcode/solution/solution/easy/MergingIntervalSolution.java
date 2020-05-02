@@ -1,12 +1,13 @@
-package com.maomao.leetcode.solution.solution;
+package com.maomao.leetcode.solution.solution.easy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
+ * @auther: fujie.feng
+ * @DateT: 2019-11-25
+ *
  * 给出一个区间的集合，请合并所有重叠的区间。
  *
  * 示例 1:
@@ -20,50 +21,16 @@ import java.util.List;
  * 输出: [[1,5]]
  * 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
  *
- *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/merge-intervals
+ * 来源: 力扣（LeetCode）
+ * 链接: https://leetcode-cn.com/problems/merge-intervals
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- * @author fujie.feng
- * @Date 2020-04-16
+ *
+ * 题解: 先排序 后和并。
+ *
  */
-public class MergeInts {
+public class MergingIntervalSolution {
 
-    /**
-     * 将而为数组分开排序，然后merge
-     * @param intervals
-     * @return
-     */
-    public int[][] merge(int[][] intervals) {
-        int len = intervals.length;
-        
-        int[] s1 = new int[len];
-        int[] s2 = new int[len];
-        for (int i = 0; i < len; i++) {
-            s1[i] = intervals[i][0];
-            s2[i] = intervals[i][1];
-        }
-
-        Arrays.sort(s1);
-        Arrays.sort(s2);
-        
-        List<int[]> list = new ArrayList<>();
-        for (int i = 0, j = 0; i < len; i++) {
-            if (i == len - 1 || s1[i + 1] > s2[i]) {
-                list.add(new int[]{s1[j], s2[i]});
-                j = i + 1;
-            }
-        }
-
-        return list.toArray(new int[list.size()][]);
-    }
-
-    /**
-     * 整体排序
-     * @param intervals
-     * @return
-     */
-    public int[][] merge2(int[][] intervals) {
+    public static int[][] merge(int[][] intervals) {
         LinkedList<int[]> res = new LinkedList<>();
         if (intervals == null || intervals.length == 0) {
             return res.toArray(new int[0][]);
@@ -82,5 +49,10 @@ public class MergeInts {
             }
         }
         return res.toArray(new int[0][0]);
+    }
+
+    public static void main(String[] args) {
+        int[][] intervals = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println(MergingIntervalSolution.merge(intervals));
     }
 }
