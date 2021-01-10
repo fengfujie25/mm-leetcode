@@ -18,7 +18,8 @@ public class AppTest {
 //            System.out.println(b[i]);
 //        }
 
-        BaseSort mergeSort = new RadixSort(a);
+//        BaseSort mergeSort = new RadixSort(a);
+        BaseSort mergeSort = new QuickSort(a);
         mergeSort.execute();
     }
 }
